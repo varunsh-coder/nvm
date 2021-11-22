@@ -9,6 +9,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: step-security/harden-runner@main
+        with:
+          allowed-endpoints: 
+            agent.api.stepsecurity.io:443
+            github.com:443
+            nodejs.org:443
+            registry.npmjs.org:443
       - uses: actions/checkout@v2
       - uses: ljharb/actions/node/install@main
         name: 'nvm install ${{ matrix.node-version }} && npm install'
@@ -22,6 +28,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: step-security/harden-runner@main
+        with:
+          allowed-endpoints: 
+            agent.api.stepsecurity.io:443
+            github.com:443
+            nodejs.org:443
+            registry.npmjs.org:443
       - uses: actions/checkout@v2
       - uses: ljharb/actions/node/install@main
         name: 'nvm install ${{ matrix.node-version }} && npm install'
@@ -35,6 +47,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: step-security/harden-runner@main
+        with:
+          allowed-endpoints: 
+            agent.api.stepsecurity.io:443
+            github.com:443
+            nodejs.org:443
+            registry.npmjs.org:443
       - uses: actions/checkout@v2
       - uses: ljharb/actions/node/install@main
         name: 'nvm install ${{ matrix.node-version }} && npm install'
@@ -48,6 +66,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: step-security/harden-runner@main
+        with:
+          allowed-endpoints: 
+            agent.api.stepsecurity.io:443
+            github.com:443
       - uses: actions/checkout@v2
       - name: check tests filenames
         run: ./rename_test.sh --check
