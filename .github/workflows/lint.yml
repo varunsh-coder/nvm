@@ -29,7 +29,6 @@ jobs:
       - uses: step-security/harden-runner@main
         with:
           allowed-endpoints:
-            agent.api.stepsecurity.io:443
             github.com:443
             nodejs.org:443
             registry.npmjs.org:443
@@ -48,7 +47,6 @@ jobs:
       - uses: step-security/harden-runner@main
         with:
           allowed-endpoints:
-            agent.api.stepsecurity.io:443
             github.com:443
             nodejs.org:443
             registry.npmjs.org:443
@@ -67,7 +65,6 @@ jobs:
       - uses: step-security/harden-runner@main
         with:
           allowed-endpoints:
-            agent.api.stepsecurity.io:443
             github.com:443
       - uses: actions/checkout@v2
       - name: check tests filenames
