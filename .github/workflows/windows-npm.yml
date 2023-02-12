@@ -6,6 +6,9 @@ env:
   NVM_INSTALL_GITHUB_REPO: ${{ github.repository }}
   NVM_INSTALL_VERSION: ${{ github.sha }}
 
+permissions:
+  contents: read
+
 jobs:
   msys_fail_install:
     # Default installation does not work due to npm_config_prefix set to C:\npm\prefix

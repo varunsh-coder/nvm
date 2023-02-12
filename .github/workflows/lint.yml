@@ -2,6 +2,9 @@ name: 'Tests: linting'
 
 on: [pull_request, push]
 
+permissions:
+  contents: read
+
 jobs:
   eclint:
     permissions:

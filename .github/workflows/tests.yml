@@ -2,6 +2,9 @@ name: urchin tests
 
 on: [push]
 
+permissions:
+  contents: read
+
 jobs:
   tests:
     permissions:
@@ -54,4 +57,9 @@ jobs:
     needs: [tests]
     runs-on: ubuntu-latest
     steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@v2
+        with:
+          egress-policy: audit # TODO: change to 'egress-policy: block' after couple of runs
+
       - run: 'echo tests completed'
