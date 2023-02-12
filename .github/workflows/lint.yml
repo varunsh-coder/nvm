@@ -2,21 +2,24 @@ name: 'Tests: linting'
 
 on: [pull_request, push]
 
+permissions:
+  contents: read
+
 jobs:
   eclint:
     permissions:
       contents: read
     runs-on: ubuntu-latest
     steps:
-      - uses: step-security/harden-runner@v1
+      - uses: step-security/harden-runner@2e205a28d0e1da00c5f53b161f4067b052c61f34 # v1.5.0
         with:
           allowed-endpoints:
             github.com:443
             raw.githubusercontent.com:443
             nodejs.org:443
             registry.npmjs.org:443
-      - uses: actions/checkout@v3
-      - uses: ljharb/actions/node/install@main
+      - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
+      - uses: ljharb/actions/node/install@e581b90aa7de47e8dfc76d773ae412972a64f96c # main
         name: 'nvm install ${{ matrix.node-version }} && npm install'
         with:
           node-version: 'lts/*'
@@ -27,7 +30,7 @@ jobs:
       contents: read
     runs-on: ubuntu-latest
     steps:
-      - uses: step-security/harden-runner@v1
+      - uses: step-security/harden-runner@2e205a28d0e1da00c5f53b161f4067b052c61f34 # v1.5.0
         with:
           allowed-endpoints:
             ghcr.io:443
@@ -36,8 +39,8 @@ jobs:
             pkg-containers.githubusercontent.com:443
             nodejs.org:443
             registry.npmjs.org:443
-      - uses: actions/checkout@v3
-      - uses: ljharb/actions/node/install@main
+      - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
+      - uses: ljharb/actions/node/install@e581b90aa7de47e8dfc76d773ae412972a64f96c # main
         name: 'nvm install ${{ matrix.node-version }} && npm install'
         with:
           node-version: 'lts/*'
@@ -48,15 +51,15 @@ jobs:
       contents: read
     runs-on: ubuntu-latest
     steps:
-      - uses: step-security/harden-runner@v1
+      - uses: step-security/harden-runner@2e205a28d0e1da00c5f53b161f4067b052c61f34 # v1.5.0
         with:
           allowed-endpoints:
             github.com:443
             raw.githubusercontent.com:443
             nodejs.org:443
             registry.npmjs.org:443
-      - uses: actions/checkout@v3
-      - uses: ljharb/actions/node/install@main
+      - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
+      - uses: ljharb/actions/node/install@e581b90aa7de47e8dfc76d773ae412972a64f96c # main
         name: 'nvm install ${{ matrix.node-version }} && npm install'
         with:
           node-version: 'lts/*'
@@ -67,11 +70,11 @@ jobs:
       contents: read
     runs-on: ubuntu-latest
     steps:
-      - uses: step-security/harden-runner@v1
+      - uses: step-security/harden-runner@2e205a28d0e1da00c5f53b161f4067b052c61f34 # v1.5.0
         with:
           allowed-endpoints:
             github.com:443
             raw.githubusercontent.com:443
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
       - name: check tests filenames
         run: ./rename_test.sh --check

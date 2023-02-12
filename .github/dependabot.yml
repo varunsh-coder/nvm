@@ -1,0 +1,41 @@
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: daily
+
+  - package-ecosystem: docker
+    directory: /
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /test/fast/Unit tests/mocks/project_dirs/nested-both
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /test/fast/Unit tests/mocks/project_dirs/nested-pkg
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /test/fast/Unit tests/mocks/project_dirs/no-nesting-both
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /test/fast/Unit tests/mocks/project_dirs/no-nesting-pkg
+    schedule:
+      interval: daily
+
+  - package-ecosystem: npm
+    directory: /test/slow/nvm reinstall-packages/test-npmlink
+    schedule:
+      interval: daily
