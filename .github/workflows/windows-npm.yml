@@ -6,6 +6,9 @@ env:
   NVM_INSTALL_GITHUB_REPO: ${{ github.repository }}
   NVM_INSTALL_VERSION: ${{ github.sha }}
 
+permissions:
+  contents: read
+
 jobs:
   msys_fail_install:
     # Default installation does not work due to npm_config_prefix set to C:\npm\prefix
@@ -110,7 +113,7 @@ jobs:
           - ''
           - 'script'
     steps:
-      - uses: Vampire/setup-wsl@v1
+      - uses: Vampire/setup-wsl@78d83c457803a02f599fa9794be3646964edd72c # v1.3.6
         with:
           distribution: ${{ matrix.wsl-distrib }}
           additional-packages: bash git curl ca-certificates wget
